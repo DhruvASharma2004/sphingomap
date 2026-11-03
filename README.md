@@ -7,7 +7,7 @@
 ![python](https://img.shields.io/badge/python-3.10%2B-blue)
 ![license](https://img.shields.io/badge/license-MIT-green)
 
-<p align="center"><img src="docs/figures/pathway_map.png" width="720" alt="Sphingolipid pathway map coloured by tumor-vs-normal fold change"></p>
+<p align="center"><img src="results/TCGA-COADREAD/figures/pathway_map.png" width="720" alt="Sphingolipid pathway map coloured by tumor-vs-normal fold change"></p>
 
 ## Why
 
@@ -68,8 +68,19 @@ figures/                     pathway_map, volcano, heatmap, module_scores, km_rh
 
 ## Results
 
-**TCGA‑COAD + READ:** the [TCGA workflow](.github/workflows/tcga.yml) runs the full analysis on
-GitHub's servers and writes the report to [`results/TCGA-COADREAD/REPORT.md`](results/TCGA-COADREAD/REPORT.md).
+### TCGA colorectal adenocarcinoma (COAD + READ): 382 tumors, 51 normals (32 matched pairs)
+
+Full report: [`results/TCGA-COADREAD/REPORT.md`](results/TCGA-COADREAD/REPORT.md). It is regenerated automatically by the [TCGA workflow](.github/workflows/tcga.yml).
+
+- **24 of 44 expressed pathway genes** change significantly in tumors (FDR < 0.05, |log2FC| ≥ 0.5).
+- **The S1P export and signalling arm goes up.** *SPNS2* (+1.53 log2FC) and *SPHK1* (+1.13) increase in tumors. *S1PR1* (−1.21) and the S1P phosphatases *SGPP1*/*SGPP2* decrease.
+- **Ceramide generation goes down.** *SPTLC3* (−1.80), the sphingomyelinases *SMPD1* (−1.86) and *SMPD3* (−1.54), and *CERS1*/*CERS4* all decrease.
+- **The rheostat index shifts toward pro-survival in tumors** (+0.98 SD vs. normal, FDR < 1e‑300).
+- **Ceramide-catabolism score drops with advancing stage** (Spearman ρ = −0.17, p = 0.002). The rheostat index does not significantly predict overall survival (log‑rank p = 0.15).
+
+| | |
+|---|---|
+| ![volcano](results/TCGA-COADREAD/figures/volcano.png) | ![scores](results/TCGA-COADREAD/figures/module_scores.png) |
 
 **Pipeline demo (synthetic data):** the figures below come from the simulated cohort in
 `sphingomap/simulate.py`, which has planted effects so you can see that the pipeline recovers them.
