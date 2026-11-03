@@ -1,0 +1,36 @@
+name: TCGA colorectal analysis
+
+# Downloads TCGA-COAD and TCGA-READ from the UCSC Xena hub, runs the full
+# pipeline and commits the report + figures to results/TCGA-COADREAD.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["sphingomap/**", ".github/workflows/tcga.yml"]
+
+permissions:
+  contents: write
+
+jobs:
+  analyse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -e .
+      - name: Fetch TCGA data and run sphingomap
+        run: sphingomap tcga COAD READ --datadir data/raw -o results/TCGA-COADREAD
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tcga-coadread-results
+          path: results/TCGA-COADREAD
+      - name: Commit results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/TCGA-COADREAD
+          git diff --cached --quiet || git commit -m "Update TCGA-COADREAD results [skip ci]"
+          git push

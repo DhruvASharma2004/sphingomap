@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sphingomap"
+version = "0.1.0"
+description = "Sphingolipid pathway expression analysis for TCGA-style cancer transcriptomes"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Dhruv Sharma" }]
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.24",
+  "pandas>=2.0",
+  "scipy>=1.10",
+  "matplotlib>=3.7",
+  "lifelines>=0.27",
+]
+keywords = ["bioinformatics", "sphingolipids", "ceramide", "TCGA", "colorectal cancer", "RNA-seq"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7", "ruff>=0.4"]
+
+[project.scripts]
+sphingomap = "sphingomap.cli:main"
+
+[tool.setuptools]
+packages = ["sphingomap"]
+
+[tool.ruff]
+line-length = 120
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = ["E402"]
