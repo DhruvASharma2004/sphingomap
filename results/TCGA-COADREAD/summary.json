@@ -1,0 +1,126 @@
+{
+  "label": "TCGA-COAD+READ",
+  "version": "0.1.0",
+  "date": "2026-11-03",
+  "n_tumor": 382,
+  "n_normal": 51,
+  "n_pathway_genes_found": 46,
+  "missing_genes": [],
+  "n_expressed": 44,
+  "n_matched_pairs": 32,
+  "n_significant": 24,
+  "top_up": [
+    "SPNS2",
+    "SPHK1",
+    "S1PR5",
+    "GLA",
+    "SMPD4"
+  ],
+  "top_down": [
+    "SMPD1",
+    "SPTLC3",
+    "CERS1",
+    "SMPD3",
+    "CERS4",
+    "S1PR1",
+    "S1PR4",
+    "SGPP1"
+  ],
+  "score_tests": [
+    {
+      "gene": "rheostat_index",
+      "mean_difference": 0.981258,
+      "p_welch": 0.0,
+      "fdr": 0.0
+    },
+    {
+      "gene": "ceramide_catabolism",
+      "mean_difference": -1.321559,
+      "p_welch": 0.0,
+      "fdr": 0.0
+    },
+    {
+      "gene": "sphingomyelin_cycle",
+      "mean_difference": -0.882187,
+      "p_welch": 0.0,
+      "fdr": 0.0
+    },
+    {
+      "gene": "de_novo_synthesis",
+      "mean_difference": -0.609451,
+      "p_welch": 0.0,
+      "fdr": 0.0
+    },
+    {
+      "gene": "glycosphingolipid_branch",
+      "mean_difference": -0.48616,
+      "p_welch": 0.0,
+      "fdr": 0.0
+    },
+    {
+      "gene": "s1p_axis",
+      "mean_difference": -0.329641,
+      "p_welch": 9e-06,
+      "fdr": 9e-06
+    }
+  ],
+  "stage_tests": [
+    {
+      "score": "de_novo_synthesis",
+      "n": 359,
+      "p_kruskal": 0.919384,
+      "spearman_rho": -0.000956,
+      "p_spearman": 0.985595,
+      "fdr_kruskal": 0.955193
+    },
+    {
+      "score": "sphingomyelin_cycle",
+      "n": 359,
+      "p_kruskal": 0.609453,
+      "spearman_rho": -0.021693,
+      "p_spearman": 0.68207,
+      "fdr_kruskal": 0.955193
+    },
+    {
+      "score": "ceramide_catabolism",
+      "n": 359,
+      "p_kruskal": 0.017684,
+      "spearman_rho": -0.166709,
+      "p_spearman": 0.001525,
+      "fdr_kruskal": 0.106104
+    },
+    {
+      "score": "s1p_axis",
+      "n": 359,
+      "p_kruskal": 0.754692,
+      "spearman_rho": 0.044382,
+      "p_spearman": 0.401804,
+      "fdr_kruskal": 0.955193
+    },
+    {
+      "score": "glycosphingolipid_branch",
+      "n": 359,
+      "p_kruskal": 0.140366,
+      "spearman_rho": -0.102929,
+      "p_spearman": 0.051342,
+      "fdr_kruskal": 0.421097
+    },
+    {
+      "score": "rheostat_index",
+      "n": 359,
+      "p_kruskal": 0.955193,
+      "spearman_rho": 0.028214,
+      "p_spearman": 0.594158,
+      "fdr_kruskal": 0.955193
+    }
+  ],
+  "survival_rheostat": {
+    "n": 374,
+    "events": 86,
+    "logrank_p": 0.14570596030371305,
+    "cox_hr_per_unit": 1.107010547762131,
+    "cox_hr_ci_low": 0.8233978181820937,
+    "cox_hr_ci_high": 1.488311391888582,
+    "cox_p": 0.5008133743013043
+  }
+}
