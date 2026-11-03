@@ -2,8 +2,8 @@
 
 **Sphingolipid pathway expression analysis for cancer transcriptomes — tumor vs. normal, pathway scores and clinical outcome in TCGA colorectal cancer.**
 
-[![tests](https://github.com/USERNAME/sphingomap/actions/workflows/ci.yml/badge.svg)](https://github.com/USERNAME/sphingomap/actions/workflows/ci.yml)
-[![TCGA analysis](https://github.com/USERNAME/sphingomap/actions/workflows/tcga.yml/badge.svg)](https://github.com/USERNAME/sphingomap/actions/workflows/tcga.yml)
+[![tests](https://github.com/DhruvASharma2004/sphingomap/actions/workflows/ci.yml/badge.svg)](https://github.com/DhruvASharma2004/sphingomap/actions/workflows/ci.yml)
+[![TCGA analysis](https://github.com/DhruvASharma2004/sphingomap/actions/workflows/tcga.yml/badge.svg)](https://github.com/DhruvASharma2004/sphingomap/actions/workflows/tcga.yml)
 ![python](https://img.shields.io/badge/python-3.10%2B-blue)
 ![license](https://img.shields.io/badge/license-MIT-green)
 
@@ -37,7 +37,7 @@ re-wired in tumors, and does that re-wiring track with stage or survival?*
 ## Quick start
 
 ```bash
-git clone https://github.com/USERNAME/sphingomap.git
+git clone https://github.com/DhruvASharma2004/sphingomap.git
 cd sphingomap
 pip install -e .
 
